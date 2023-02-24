@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project1/splash_screen/splash_screen.dart';
 
 void main() => runApp(const MyApp());
 
@@ -9,13 +10,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: _title,
-      home: Scaffold(
-        appBar: AppBar(title: const Text(_title)),
-        body: const MyStatefulWidget(),
-      ),
+      home: SplashScreen(),
     );
   }
 }
@@ -41,18 +39,20 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
               height: 120.0,
               width: 120.0,
               decoration: const BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage('assets/images/download.jpeg')),
                 shape: BoxShape.circle,
+                image: DecorationImage(
+                  image: AssetImage('assets/images/download.jpeg'),
+                ),
               ),
             ),
             Container(
-                alignment: Alignment.center,
-                padding: const EdgeInsets.all(10),
-                child: const Text(
-                  'Sign in',
-                  style: TextStyle(fontSize: 20),
-                )),
+              alignment: Alignment.center,
+              padding: const EdgeInsets.all(10),
+              child: const Text(
+                'Sign in',
+                style: TextStyle(fontSize: 20),
+              ),
+            ),
             Container(
               padding: const EdgeInsets.all(10),
               child: TextField(
@@ -83,16 +83,18 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
               ),
             ),
             Container(
-                height: 50,
-                padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
-                child: ElevatedButton(
-                  child: const Text('Login'),
-                  onPressed: () {
-                    print(nameController.text);
-                    print(passwordController.text);
-                  },
-                )),
+              height: 50,
+              padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
+              child: ElevatedButton(
+                child: const Text('Login'),
+                onPressed: () {
+                  print(nameController.text);
+                  print(passwordController.text);
+                },
+              ),
+            ),
             Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               // ignore: sort_child_properties_last
               children: <Widget>[
                 const Text('Does not have account?'),
@@ -106,7 +108,6 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                   },
                 )
               ],
-              mainAxisAlignment: MainAxisAlignment.center,
             ),
           ],
         ));

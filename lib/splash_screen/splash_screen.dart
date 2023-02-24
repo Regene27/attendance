@@ -21,17 +21,19 @@ class _SplashScreenState extends State<SplashScreen> {
             width: 120.0,
             decoration: const BoxDecoration(
               image: DecorationImage(
-                  image: AssetImage('assets/images/download.jpeg')),
+                image: AssetImage('assets/images/download.jpeg'),
+              ),
               shape: BoxShape.circle,
             ),
           ),
           Container(
-              alignment: Alignment.center,
-              padding: const EdgeInsets.all(10),
-              child: const Text(
-                'CamTech',
-                style: TextStyle(fontSize: 20),
-              )),
+            alignment: Alignment.center,
+            padding: const EdgeInsets.all(10),
+            child: const Text(
+              'CamTech',
+              style: TextStyle(fontSize: 20),
+            ),
+          ),
         ],
       )),
     );
